@@ -2,7 +2,7 @@ package src.Giris;
 
 import java.util.Scanner;
 
-public class Baslangic {
+public class ortalama {
 public static void main(String[] args) {
     int mat, fiz, kim, biyo, tarih, turkce, muzik;
     Scanner input = new Scanner(System.in);

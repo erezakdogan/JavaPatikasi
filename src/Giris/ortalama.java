@@ -27,7 +27,7 @@ public static void main(String[] args) {
 
     System.out.print("Müzik Notunuzu Giriniz : ");
     muzik = input.nextInt();
-
+    input.close();
       double ortalama = (mat+ fiz+ kim+ biyo+ tarih+ turkce+ muzik)/6;
       boolean gectimi = (ortalama>=60);
       String durum =gectimi?" Sınıfı Geçti":" Sınıfta Kaldı";

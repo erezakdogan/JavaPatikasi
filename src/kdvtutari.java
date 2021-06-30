@@ -14,7 +14,7 @@ public class kdvtutari {
         System.out.println("Para değeri giriniz: ");
         paraDergeri = inp.nextInt();
         bindenBuyuk=(paraDergeri>1000);
-        
+        inp.close();
         kdvliDeger = (bindenBuyuk?paraDergeri*indKdv+paraDergeri:paraDergeri*kdvOrani+paraDergeri); 
         System.out.println(kdvliDeger);
         

@@ -11,10 +11,11 @@ public class taksimetre{
         Scanner olcer= new Scanner(System.in);
         System.out.print("Kaç km?"); 
         mesafe = olcer.nextDouble();
-        
+        olcer.close();
+
         
         min = (mesafe*kmU+acılısU<20);
         ucret =min?20:mesafe*kmU+acılısU;
-        System.out.print("Tutar : "+5 ucret); 
+        System.out.print("Tutar : "+ucret); 
     }
 }

@@ -14,7 +14,7 @@ public class dairealan {
         r = inp.nextInt();
         System.out.print("Merkez açı ölçüsü giriniz : ");
         mAcı = inp.nextInt();
-
+        inp.close();
         alan = (pi*r*r*mAcı)/360;
         System.out.print("Dairenin alanı : "+ alan+"cm");
 

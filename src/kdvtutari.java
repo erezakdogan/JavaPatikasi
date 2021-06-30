@@ -15,7 +15,7 @@ public class kdvtutari {
         paraDergeri = inp.nextInt();
         bindenBuyuk=(paraDergeri>1000);
         
-        kdvliDeger = (bindenBuyuk?paraDergeri*indKdv+paraDergeri:paraDergeri*kdvOrani+paraDergeri12); 
+        kdvliDeger = (bindenBuyuk?paraDergeri*indKdv+paraDergeri:paraDergeri*kdvOrani+paraDergeri); 
         System.out.println(kdvliDeger);
         
     }

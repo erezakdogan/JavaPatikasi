@@ -2,6 +2,7 @@ package src;
 
 import java.util.Scanner;
 
+
 public class ucgenalan {
     public static void main(String[] args) {
         int a,b,c;
@@ -13,7 +14,9 @@ public class ucgenalan {
         b = kenar.nextInt();
         System.out.print("3.Kenarı giriniz: ");
         c = kenar.nextInt();
+        kenar.close();
 
+        
         int u = (a+b+c)/2;
         alan = (u*(u-a)  *(u-b)*(u-c));
         System.out.print(Math.sqrt(alan));

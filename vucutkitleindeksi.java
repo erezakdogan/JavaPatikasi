@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import org.graalvm.compiler.nodes.calc.IsNullNode;
 
 public class vucutkitleindeksi {
     public static void main(String[] args) {

@@ -11,7 +11,7 @@ public class kombinasyonhesaplama {
         n = scan.nextInt();
         System.out.println("2.Sayıyı giriniz : ");
         c = scan.nextInt();
-
+        scan.close();
         int factorialN = 1;
         for(int i =1; i<=n; i++){
             factorialN = factorialN*i;

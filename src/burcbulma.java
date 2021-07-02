@@ -11,7 +11,7 @@ public class burcbulma {
         month = scan.nextInt();
         System.out.print("Doğduğunuz gün(Rakam cinsiden) : ");
         day = scan.nextInt();
-
+        scan.close();
 
         if(month == 1){
             if(day<22){

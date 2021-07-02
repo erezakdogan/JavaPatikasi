@@ -9,7 +9,7 @@ public class cinzodyagi{
         Scanner scan = new Scanner(System.in);
         System.out.println("Doğum Yılınızı Giriniz : ");
         year = scan.nextInt();
-
+        scan.close();
         int zodiac = year%12;
 
         switch(zodiac){

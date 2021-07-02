@@ -8,7 +8,7 @@ public class kuvvetyazdirma {
        Scanner scanner =new Scanner(System.in);
        System.out.print("Sayı giriniz : ");
        num = scanner.nextInt();
-
+       scanner.close();
 
        System.out.println("Dördün Katları");
 for(int i = 1; i<=num; i*=4){

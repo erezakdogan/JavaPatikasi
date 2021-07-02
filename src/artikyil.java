@@ -9,6 +9,7 @@ public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.println("Bir yıl giriniz : ");
     year = scan.nextInt();
+    scan.close();
 
     if(year%100 == 0){
         artikyil = (year%400 == 0);

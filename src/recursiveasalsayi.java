@@ -21,7 +21,8 @@ public class recursiveasalsayi {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Sayı Giriniz : ");
         int n = scanner.nextInt();
- 
+        scanner.close();
+        
         if (isPrime(n, 2))
             System.out.println(n+" sayısı ASALDIR !");
         else

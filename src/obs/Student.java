@@ -36,23 +36,6 @@ public class Student{
         }
     }
 
-    
-    public void addBulkExamNote(int mat, int fizik, int kimya) {
-
-        if (mat >= 0 && mat <= 100) {
-            this.mat.note = mat;
-        }
-
-        if (fizik >= 0 && fizik <= 100) {
-            this.fizik.note = fizik;
-        }
-
-        if (kimya >= 0 && kimya <= 100) {
-            this.kimya.note = kimya;
-        }
-
-    }
-
     public void isPass() {
         if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0) {
             System.out.println("Notlar tam olarak girilmemiş");

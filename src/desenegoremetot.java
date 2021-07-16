@@ -6,9 +6,7 @@ public class desenegoremetot {
     }
 
     static int desen(int a){
-    int a2= a;
-       
-       while(a>0){
+    while(a>0){
             System.out.print(" desen 2 "+a);
             a-=5;
             while(a<=0){

@@ -10,7 +10,7 @@ public class Empoyee {
         toString(name, salary, workHour, hireYear);
     }
 
-    public static void Employee(String name,int salary,int workHour,int hireYear){     //: Kurucu metot olup 4 parametre alacaktır.
+    void Employee(String name,int salary,int workHour,int hireYear){     //: Kurucu metot olup 4 parametre alacaktır.
 
     }
 

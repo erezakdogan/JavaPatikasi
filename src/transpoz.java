@@ -14,6 +14,7 @@ public class transpoz {
         }
    
     }
+    scan.close();
         
 
         System.out.println("Matris :");

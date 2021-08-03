@@ -1,4 +1,4 @@
-package src;
+
 
 public class palindromsayi {
     public static void main(String[] args) {

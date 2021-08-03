@@ -1,4 +1,4 @@
-package src;
+
 
 public class Empoyee {   
     static String name="kemal";      //:Çalışanın adı ve soyadı

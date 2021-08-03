@@ -1,4 +1,4 @@
-package src.obs;
+package obs;
 
 public class Student{
     String name,stuNo;

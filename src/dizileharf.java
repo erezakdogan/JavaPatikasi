@@ -1,4 +1,4 @@
-package src;
+
 
 public class dizileharf {
     public static void main(String[] args) {

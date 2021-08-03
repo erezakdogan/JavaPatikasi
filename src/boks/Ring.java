@@ -1,4 +1,4 @@
-package src.boks;
+package boks;
 public class Ring {
     Fighter f1;
     Fighter f2;

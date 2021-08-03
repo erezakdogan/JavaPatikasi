@@ -1,4 +1,4 @@
-package src.boks;
+package boks;
 
 public class Main {
     public  static void main(String[] args) {

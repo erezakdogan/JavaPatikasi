@@ -1,4 +1,4 @@
-package src;
+
 
 public class fibonaccidizisi {
     public static void main(String[] args) {

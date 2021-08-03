@@ -1,4 +1,4 @@
-package src.obs;
+package obs;
 public class Main{
     
     public static  void main(String[] args) {

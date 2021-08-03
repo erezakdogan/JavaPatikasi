@@ -1,4 +1,4 @@
-package src;
+
 
 import java.util.Arrays;
 import java.util.Random;
@@ -89,6 +89,6 @@ public class mayintarlasi{
         System.out.println();
     }
 
-        
+        scanner.close();
     }
 }

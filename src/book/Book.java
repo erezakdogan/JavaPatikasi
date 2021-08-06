@@ -1,7 +1,7 @@
 package book;
 import java.text.SimpleDateFormat;
 
-public class Book implements Comparable{
+public class Book {
 
    private String bookName, authorName;
    private int pageNum;
@@ -55,9 +55,4 @@ public class Book implements Comparable{
 
 
 
-    @Override
-    public int compareTo(Object o) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
 }

@@ -1,0 +1,7 @@
+{
+    "java.dependency.packagePresentation": "flat",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Ereza\\Downloads\\postgresql-42.2.23.jar"
+    ]
+}

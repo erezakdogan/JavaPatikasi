@@ -103,7 +103,7 @@ public class Main {
         }
         continue;
       }
-
+scan.close();
     }
 
 
@@ -160,6 +160,7 @@ public class Main {
         System.out.format("%-10d%-10d%-10d%-10d%-10d%-10d%-30s%-15s%-10f", o.getId() ,o.getBirimFiyati(),o.getIndirimOrani(),o.getDepolama(), o.getRam(),o.getStok(), o.getItemName(),o.getMarka().getName(),o.getEkranDouble()); 
          
        }
+       
     
     }
     

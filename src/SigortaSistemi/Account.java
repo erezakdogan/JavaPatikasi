@@ -110,6 +110,6 @@ public abstract class Account {
         "\n1-Kullanıcı Bilgileri "+
         "\n2-Sigortalarım");
         }
-    
+    scan.close();
     }
 }

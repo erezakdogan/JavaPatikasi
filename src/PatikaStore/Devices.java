@@ -1,7 +1,6 @@
 package PatikaStore;
 
-import java.util.ArrayList;
-
+ 
 public class Devices {
     int id,birimFiyati,indirimOrani,depolama,ram, stok;
     String itemName;

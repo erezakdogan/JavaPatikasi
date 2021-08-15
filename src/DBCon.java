@@ -10,8 +10,8 @@ public class DBCon {
         try{
             String url = "jdbc:postgresql://localhost/dvdrental?user=postgres&password=postgresql";
             connection = DriverManager.getConnection(url);
-            // Statement statement = connection.createStatement();
-            // statement.executeUpdate(stSql);
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(stSql);
             PreparedStatement statement2 = connection.prepareStatement(prSql);
             statement2.setString(1, "Telma");
             statement2.setInt(2, 235);

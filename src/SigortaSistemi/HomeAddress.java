@@ -16,13 +16,11 @@ public class HomeAddress implements Address {
     }
 
     @Override
-    public void add(String street) {
-        // TODO Auto-generated method stub
+    public void add(String street) { 
         
     }
    @Override
-   public String getAddresse() {
-       // TODO Auto-generated method stub
+   public String getAddresse() { 
        return street;
    }
 }

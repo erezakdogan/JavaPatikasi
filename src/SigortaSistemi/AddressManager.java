@@ -1,7 +1,6 @@
 package SigortaSistemi;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class AddressManager {
     Scanner scan = new Scanner(System.in);

@@ -11,8 +11,7 @@ public class Enterprise extends Account {
             System.out.println("Satın almak istediğiniz sigortayı seçiniz:\n"+"1 - Hayat Sigortası\n"+"2 - Konut Sigortası\n"+"3 - Seyehat Sigortası\n"+"4 - Araba Sigortası\n");
             int i = scan.nextInt();
             System.out.println("Ay : ");
-            int mont = scan.nextInt();        
-
+ 
             switch(i){
                 case 1:
                 System.out.println(insurances.size());

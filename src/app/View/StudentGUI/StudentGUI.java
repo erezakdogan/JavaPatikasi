@@ -132,6 +132,8 @@ public class StudentGUI {
         courseBase.setExpanded(true);
 
         System.out.println();
+
+
         ArrayList<TreeItem<String>> patikaList = new ArrayList<>();
         for (int k = 0; k < patikas.size(); k++) {
             patika = new TreeItem<>(patikas.get(k).getName());
@@ -160,6 +162,8 @@ public class StudentGUI {
         }
         root.getChildren().addAll(patikaList);
     }
+
+    
 
 }
 

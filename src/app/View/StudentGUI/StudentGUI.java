@@ -13,6 +13,7 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.Tab;
 
@@ -31,7 +32,7 @@ public class StudentGUI {
     private TreeView<String> coursetree;
 
     @FXML
-    private Tab l;
+    private AnchorPane coursepane;
 
     @FXML
     private Label namelabel;
@@ -54,7 +55,7 @@ public class StudentGUI {
         assert pattree != null : "fx:id=\"pattree\" was not injected: check your FXML file 'Untitled'.";
         assert coursetree != null : "fx:id=\"coursetree\" was not injected: check your FXML file 'Untitled'.";
         assert namelabel != null : "fx:id=\"namelabel\" was not injected: check your FXML file 'Untitled'.";
-        assert l != null : "fx:id=\"namelabel\" was not injected: check your FXML file 'Untitled'.";
+        assert coursepane != null : "fx:id=\"namelabel\" was not injected: check your FXML file 'Untitled'.";
 
     }
 
@@ -136,10 +137,10 @@ public class StudentGUI {
 
             ArrayList<TreeItem<String>> courselist = new ArrayList<>();
             for (int i = 0; i < mycourses.size(); i++) {
-                if(patikas.get(k).getName().equals(mycourses.get(i).getPatika_name())){
-                courses = new TreeItem<>(mycourses.get(i).getName());   
+                if (patikas.get(k).getName().equals(mycourses.get(i).getPatika_name())) {
+                    courses = new TreeItem<>(mycourses.get(i).getName());
 
-                ArrayList<TreeItem<String>> contentlist = new ArrayList<>();
+                    ArrayList<TreeItem<String>> contentlist = new ArrayList<>();
                     for (int j = 0; j < mycontent.size(); j++) {
                         if (mycourses.get(i).getName().equals(mycontent.get(j).getBranch())) {
                             lessons = new TreeItem<>(mycontent.get(j).getName());
@@ -149,19 +150,15 @@ public class StudentGUI {
                     courses.getChildren().addAll(contentlist);
                     courses.setExpanded(true);
 
-                courselist.add(courses);
+                    courselist.add(courses);
                 }
-                
-
-             
             }
-
-            
             patika.getChildren().addAll(courselist);
             patika.setExpanded(true);
             patikaList.add(patika);
         }
-            root.getChildren().addAll(patikaList);
-        }
+        root.getChildren().addAll(patikaList);
     }
+
+}
 

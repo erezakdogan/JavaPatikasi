@@ -114,6 +114,7 @@ public class Student extends User {
     }
 
     public ArrayList<Lessons> myLessonsList(int StudentId) {
+        loadContents();
         ArrayList<Lessons> lessons = new ArrayList<>();
         String query = "SELECT contents FROM students WHERE id = " + StudentId;
         Lessons lessons2;

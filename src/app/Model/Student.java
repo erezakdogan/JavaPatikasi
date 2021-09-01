@@ -136,6 +136,23 @@ public class Student extends User {
         return lessons;
     }
 
+    public void loadContents(){
+        String query = "UPDATE students SET contents = '{contents}'";
+        String content = null;
+        for(Lessons l : Lessons.getLessons(0)){
+            content+=l.getName()+"/";
+        }
+        query = query.replace("{contents}", content);
+        Statement statement;
+        try {
+        statement = DBConnector.getInstance().createStatement();
+        statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         
+    }
+
     public void takeContent(int id, int StudentId) {
 
     }

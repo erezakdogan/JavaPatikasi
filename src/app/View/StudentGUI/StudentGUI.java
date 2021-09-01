@@ -146,8 +146,8 @@ public class StudentGUI {
                             contentlist.add(lessons);
                         }
                     }
-                courses.getChildren().addAll(contentlist);
-                courses.setExpanded(true);
+                    courses.getChildren().addAll(contentlist);
+                    courses.setExpanded(true);
 
                 courselist.add(courses);
                 }

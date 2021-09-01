@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.StudentGUI.StudentGUI">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="458.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Patikalar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TreeView fx:id="pattree" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="l" text="Derslerim">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TreeView fx:id="coursetree" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutX="457.0" prefHeight="400.0" prefWidth="143.0">
+         <children>
+            <Label fx:id="namelabel" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="124.0" text="Hoşgeldiniz" />
+            <TreeView layoutX="10.0" layoutY="61.0" prefHeight="330.0" prefWidth="124.0" />
+            <Label layoutX="10.0" layoutY="44.0" prefHeight="16.0" prefWidth="124.0" text="Patikalarım&amp;Derslerim" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

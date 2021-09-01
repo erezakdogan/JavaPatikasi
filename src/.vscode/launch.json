@@ -1,0 +1,449 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch den",
+            "request": "launch",
+            "mainClass": "app.Model.den",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch UpdateGUI",
+            "request": "launch",
+            "mainClass": "app.View.UpdateGUI.UpdateGUI",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fx",
+            "request": "launch",
+            "mainClass": "app.Fx",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fx",
+            "request": "launch",
+            "mainClass": "app.App",
+            "vmArgs": "--module-path /Users/Ereza/Downloads/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATM",
+            "request": "launch",
+            "mainClass": "ATM",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Books.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch DBCon",
+            "request": "launch",
+            "mainClass": "DBCon",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Empoyee",
+            "request": "launch",
+            "mainClass": "Empoyee",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch MacFiskur",
+            "request": "launch",
+            "mainClass": "MacFiskur",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(1)",
+            "request": "launch",
+            "mainClass": "PatikaStore.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(2)",
+            "request": "launch",
+            "mainClass": "SigortaSistemi.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(3)",
+            "request": "launch",
+            "mainClass": "Threads.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch artikyil",
+            "request": "launch",
+            "mainClass": "artikyil",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch asalsayi",
+            "request": "launch",
+            "mainClass": "asalsayi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(4)",
+            "request": "launch",
+            "mainClass": "boks.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch bookmain",
+            "request": "launch",
+            "mainClass": "book.bookmain",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch burcbulma",
+            "request": "launch",
+            "mainClass": "burcbulma",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ciftsayibulma",
+            "request": "launch",
+            "mainClass": "ciftsayibulma",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch cinzodyagi",
+            "request": "launch",
+            "mainClass": "cinzodyagi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch dairealan",
+            "request": "launch",
+            "mainClass": "dairealan",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch desenegoremetot",
+            "request": "launch",
+            "mainClass": "desenegoremetot",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch dizileharf",
+            "request": "launch",
+            "mainClass": "dizileharf",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ebobekok",
+            "request": "launch",
+            "mainClass": "ebobekok",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch fibonaccidizisi",
+            "request": "launch",
+            "mainClass": "fibonaccidizisi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch freq",
+            "request": "launch",
+            "mainClass": "freq",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch gecmedurumu",
+            "request": "launch",
+            "mainClass": "gecmedurumu",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch generic",
+            "request": "launch",
+            "mainClass": "generic.generic",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch harmoniktoplam",
+            "request": "launch",
+            "mainClass": "harmoniktoplam",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch harmoniktoplam2",
+            "request": "launch",
+            "mainClass": "harmoniktoplam2",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch hesapmakinesi",
+            "request": "launch",
+            "mainClass": "hesapmakinesi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch hesapmakinesi2",
+            "request": "launch",
+            "mainClass": "hesapmakinesi2",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch kdvtutari",
+            "request": "launch",
+            "mainClass": "kdvtutari",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch kombinasyonhesaplama",
+            "request": "launch",
+            "mainClass": "kombinasyonhesaplama",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch kullanicigirisi",
+            "request": "launch",
+            "mainClass": "kullanicigirisi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch kuvvetyazdirma",
+            "request": "launch",
+            "mainClass": "kuvvetyazdirma",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch maksmin",
+            "request": "launch",
+            "mainClass": "maksmin",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch manavkasa",
+            "request": "launch",
+            "mainClass": "manavkasa",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch mayintarlasi",
+            "request": "launch",
+            "mainClass": "mayintarlasi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch mukemmelsayi",
+            "request": "launch",
+            "mainClass": "mukemmelsayi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(5)",
+            "request": "launch",
+            "mainClass": "obs.Main",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ortalama",
+            "request": "launch",
+            "mainClass": "ortalama",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch palindromikkelime",
+            "request": "launch",
+            "mainClass": "palindromikkelime",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch palindromsayi",
+            "request": "launch",
+            "mainClass": "palindromsayi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursiveasalsayi",
+            "request": "launch",
+            "mainClass": "recursiveasalsayi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursivefibonacci",
+            "request": "launch",
+            "mainClass": "recursivefibonacci",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursiveus",
+            "request": "launch",
+            "mainClass": "recursiveus",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayibasamaktoplami",
+            "request": "launch",
+            "mainClass": "sayibasamaktoplami",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayisiralama",
+            "request": "launch",
+            "mainClass": "sayisiralama",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayisiralama2",
+            "request": "launch",
+            "mainClass": "sayisiralama2",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayitahmin",
+            "request": "launch",
+            "mainClass": "sayitahmin",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch sicakligagoreetkinlik",
+            "request": "launch",
+            "mainClass": "sicakligagoreetkinlik",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch siralama",
+            "request": "launch",
+            "mainClass": "siralama",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch taksimetre",
+            "request": "launch",
+            "mainClass": "taksimetre",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch tekraredensayi",
+            "request": "launch",
+            "mainClass": "tekraredensayi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch teksayitoplami",
+            "request": "launch",
+            "mainClass": "teksayitoplami",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch tersucgen",
+            "request": "launch",
+            "mainClass": "tersucgen",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch transpoz",
+            "request": "launch",
+            "mainClass": "transpoz",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ucakbileti",
+            "request": "launch",
+            "mainClass": "ucakbileti",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ucgenalan",
+            "request": "launch",
+            "mainClass": "ucgenalan",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch uslusayihesaplama",
+            "request": "launch",
+            "mainClass": "uslusayihesaplama",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch vucutkitleindeksi",
+            "request": "launch",
+            "mainClass": "vucutkitleindeksi",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
+            "name": "Launch yildizileucgen",
+            "request": "launch",
+            "mainClass": "yildizileucgen",
+            "projectName": "src_6de0e26f"
+        }
+    ]
+}

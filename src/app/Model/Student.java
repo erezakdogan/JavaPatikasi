@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import app.Helper.DBConnector;
 import app.Helper.Helper;
 
@@ -31,7 +33,7 @@ public class Student extends User {
             query = query.replace("?2", " ");
             query = query.replace("?3", patname);
             query = query.replace("?4", " ");
-            query = query.replace("?5", " ");
+            query = query.replace("?5", "/");
 
         } else {
             if (patika1.contains(patname)) {
@@ -70,9 +72,9 @@ public class Student extends User {
             query = "INSERT INTO students (id,courses,patikas,contents,quiz) VALUES (?1,'?2/','?3','?4','?5')";
             query = query.replace("?1", String.valueOf(StudentId));
             query = query.replace("?2", coursename);
-            query = query.replace("?3", "");
-            query = query.replace("?4", "");
-            query = query.replace("?5", "");
+            query = query.replace("?3", " ");
+            query = query.replace("?4", " ");
+            query = query.replace("?5", "/");
 
         } else {
             if (course.contains(coursename)) {
@@ -137,28 +139,80 @@ public class Student extends User {
         return lessons;
     }
 
-    public void loadContents(){
+    public void loadContents() {
         String query = "UPDATE students SET contents = '{contents}'";
         String content = null;
-        for(Lessons l : Lessons.getLessons(0)){
-            content+=l.getName()+"/";
+        for (Lessons l : Lessons.getLessons(0)) {
+            content += l.getName() + "/";
         }
         query = query.replace("{contents}", content);
+        query = query.replace("null", "");
+
         Statement statement;
         try {
-        statement = DBConnector.getInstance().createStatement();
-        statement.executeUpdate(query);
+            statement = DBConnector.getInstance().createStatement();
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-         
-    }
-
-    public void takeContent(int id, int StudentId) {
 
     }
 
-    public void takeQuiz(int LessonsId, int StudentId) {
+    public static void takeContent(int id, int StudentId) {
+
+    }
+
+    public void takeQuiz(int rights, int LessonsId, int StudentId) {
+        String queryb = "SELECT * FROM quizquestions WHERE lessid = " + LessonsId;
+        int num = 0;
+        Statement statement;
+        try {
+            statement = DBConnector.getInstance().createStatement();
+            ResultSet rSet = statement.executeQuery(queryb);
+            while (rSet.next()) {
+                num++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String quizes = "";
+        for (Lessons l : Lessons.getLessons(0)) {
+            if (l.getId() == LessonsId) {
+                quizes += l.getName() + " konusunda " + num + " tane sorudan ";
+            }
+        }
+        quizes += rights + " tane doğru.- /";
+        String query = "UPDATE students SET quiz = REPLACE(quiz, '/', '{quizes}') WHERE id = " + StudentId;
+        query = query.replace("{quizes}", quizes);
+        Statement statement2;
+        try {
+            statement2 = DBConnector.getInstance().createStatement();
+            statement2.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<String> quizresults(int studentId) {
+        ArrayList<String> qArrayList = new ArrayList<>();
+        String query = "SELECT quiz FROM students WHERE id = " + studentId;
+        
+        try {
+        String str = " ";
+        Statement statement;
+            statement = DBConnector.getInstance().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                str += resultSet.getString("quiz");
+                str = str.replace("/", "");
+            qArrayList.addAll(Arrays.asList(str.split("-")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+
+        return qArrayList;
 
     }
 

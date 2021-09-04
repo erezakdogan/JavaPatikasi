@@ -19,21 +19,6 @@ import javafx.stage.Stage;
 
 
 public class LoginGUI {
-    // public LoginGUI(){ 
-    //     // try{
-    //     //     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/View/LoginGUI.fxml"));
-    //     //     Pane root = fxmlLoader.load();
-    //     //     Scene scene = new Scene(root);
-    //     //     Stage primaryStage =new Stage();
-    //     //     primaryStage.setTitle("Hello World!");
-    
-    //     //     primaryStage.setScene(scene);
-    //     //     primaryStage.show();
-    //     //     }catch(Exception e){
-    //     //     System.out.println(e.getMessage());
-    //     // }
-    // }
-
     @FXML
     private ResourceBundle resources;
 

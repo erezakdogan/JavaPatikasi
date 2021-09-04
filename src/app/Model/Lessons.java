@@ -197,7 +197,7 @@ public class Lessons {
 
     public static ArrayList<Lessons> getQuestions(int educator_id) {
         ArrayList<Lessons> list = new ArrayList<>();
-        String query = "SELECT * FROM quizquestions ";
+        String query = "SELECT * FROM quizquestions";
         Statement statement;
         try {
             statement = DBConnector.getInstance().createStatement();
@@ -214,13 +214,13 @@ public class Lessons {
                 for (Lessons l : getLessons(educator_id)) {
                     if (l.getId() == lessid) {
                         content = l.getName();
+                        if (content != null) {
+                            lessons = new Lessons(id, content, question, selections, answer);
+                            list.add(lessons);
+                        } else {
+                            return list;
+                        }
                     }
-                }
-                if (content != null) {
-                    lessons = new Lessons(id, content, question, selections, answer);
-                    list.add(lessons);
-                } else {
-                    return list;
                 }
 
             }
@@ -294,5 +294,7 @@ public class Lessons {
             Helper.showMsg("invalid");
         }
     }
+
+    
 
 }

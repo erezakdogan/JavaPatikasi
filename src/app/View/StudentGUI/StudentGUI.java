@@ -12,10 +12,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TreeItem;
-import javafx.scene.control.Tab;
+import javafx.scene.control.ListView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class StudentGUI {
 
@@ -37,6 +41,12 @@ public class StudentGUI {
     @FXML
     private Label namelabel;
 
+    @FXML
+    private ListView<String> listOfQuizes;
+
+    @FXML
+    private Label puanLabel;
+
     Student student;
 
     int StudentId;
@@ -45,7 +55,7 @@ public class StudentGUI {
         this.StudentId = id;
         loadPatikas();
         listCourses();
-
+        loadInfos();
     }
 
     ArrayList<Patika> patikas = Patika.listPatikas();
@@ -56,7 +66,26 @@ public class StudentGUI {
         assert coursetree != null : "fx:id=\"coursetree\" was not injected: check your FXML file 'Untitled'.";
         assert namelabel != null : "fx:id=\"namelabel\" was not injected: check your FXML file 'Untitled'.";
         assert coursepane != null : "fx:id=\"namelabel\" was not injected: check your FXML file 'Untitled'.";
+        assert listOfQuizes != null
+                : "fx:id=\"contetexit\" was not injected: check your FXML file 'StudentContent.fxml'.";
+        assert puanLabel != null : "fx:id=\"contetexit\" was not injected: check your FXML file 'StudentContent.fxml'.";
 
+        coursetree.setOnMouseClicked(e -> {
+            String selectString = coursetree.getSelectionModel().getSelectedItem().getValue();
+
+            if (isContent(selectString)) {
+                openContents(selectString);
+
+            }
+        });
+    }
+
+    private boolean isContent(String selectString) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        Lessons.getLessons(0).stream().forEach(e -> {
+            arrayList.add(e.getName());
+        });
+        return arrayList.stream().anyMatch(e -> e.contains(selectString));
     }
 
     public void loadPatikas() {
@@ -133,7 +162,6 @@ public class StudentGUI {
 
         System.out.println();
 
-
         ArrayList<TreeItem<String>> patikaList = new ArrayList<>();
         for (int k = 0; k < patikas.size(); k++) {
             patika = new TreeItem<>(patikas.get(k).getName());
@@ -163,7 +191,25 @@ public class StudentGUI {
         root.getChildren().addAll(patikaList);
     }
 
-    
+    public void openContents(String string) {
+        try {
+            FXMLLoader fxmlLoader1 = new FXMLLoader(StudentGUI.class.getResource("StudentContent.fxml"));
+            ScrollPane root1 = fxmlLoader1.load();
+            StudentContent educatorGUI = (StudentContent) fxmlLoader1.getController();
+            educatorGUI.setLabels(string, StudentId);
+            Scene scene = coursepane.getScene();
+            scene.setRoot(root1);
+            Stage primaryStage1 = (Stage) coursepane.getScene().getWindow();
+            primaryStage1.setScene(scene);
+            primaryStage1.show();
+        } catch (Exception ee) {
+            System.out.println(ee.getMessage());
+        }
+    }
+
+    public void loadInfos() {
+        puanLabel.setText("658");
+        listOfQuizes.getItems().addAll(student.quizresults(StudentId));
+    }
 
 }
-

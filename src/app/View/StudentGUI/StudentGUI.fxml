@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.StudentGUI.StudentGUI">
    <children>
@@ -34,9 +35,15 @@
       </TabPane>
       <Pane layoutX="457.0" prefHeight="400.0" prefWidth="143.0">
          <children>
-            <Label fx:id="namelabel" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="124.0" text="Hoşgeldiniz" />
-            <TreeView layoutX="10.0" layoutY="61.0" prefHeight="330.0" prefWidth="124.0" />
-            <Label layoutX="10.0" layoutY="44.0" prefHeight="16.0" prefWidth="124.0" text="Patikalarım&amp;Derslerim" />
+            <Label fx:id="namelabel" layoutX="10.0" layoutY="14.0" prefHeight="16.0" prefWidth="124.0" text="Hoşgeldiniz" />
+            <Label layoutX="10.0" layoutY="36.0" prefHeight="16.0" prefWidth="124.0" text="Patikalarım&amp;Derslerim" />
+            <ListView fx:id="listOfQuizes" layoutX="10.0" layoutY="73.0" prefHeight="313.0" prefWidth="124.0" />
+            <Label layoutX="10.0" layoutY="53.0" prefHeight="17.0" prefWidth="78.0" text="Puan Durumu">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="puanLabel" layoutX="101.0" layoutY="53.0" text="Puan" />
          </children>
       </Pane>
    </children>

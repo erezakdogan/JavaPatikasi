@@ -131,16 +131,18 @@ public class StudentGUI {
             String select = pattree.getSelectionModel().getSelectedItem().getValue();
             if (isPatika(select)) {
                 student.myPatikasAdd(select, StudentId);
-                listCourses();
+                
             }
+            listCourses();
         });
 
         dEkle.setOnAction(arg0 -> {
             String select = pattree.getSelectionModel().getSelectedItem().getValue();
             if (!isPatika(select)) {
                 student.myCoursesAdd(select, StudentId);
-                listCourses();
+                
             }
+            listCourses();
         });
         return contextMenu;
     }
@@ -191,16 +193,19 @@ public class StudentGUI {
         root.getChildren().addAll(patikaList);
     }
 
-    public void openContents(String string) {
+    public void openContents(String contentName) {
         try {
             FXMLLoader fxmlLoader1 = new FXMLLoader(StudentGUI.class.getResource("StudentContent.fxml"));
             ScrollPane root1 = fxmlLoader1.load();
+            
             StudentContent educatorGUI = (StudentContent) fxmlLoader1.getController();
-            educatorGUI.setLabels(string, StudentId);
+            educatorGUI.setLabels(contentName, StudentId);
             Scene scene = coursepane.getScene();
             scene.setRoot(root1);
             Stage primaryStage1 = (Stage) coursepane.getScene().getWindow();
             primaryStage1.setScene(scene);
+            System.out.println("burası mı baba");
+
             primaryStage1.show();
         } catch (Exception ee) {
             System.out.println(ee.getMessage());

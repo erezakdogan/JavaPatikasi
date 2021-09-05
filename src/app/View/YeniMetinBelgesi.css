@@ -27,3 +27,19 @@
 -fx-background-radius : 0px;
 -fx-border-color : #444BFF;
 }
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.bt{
+-fx-padding:0
+}
+
+.ll{
+ -fx-font-family: 'Roboto Mono',sans-serif;
+-fx-padding:0
+}
+.bg *.tab-header-area{
+-fx-background-color : #444BFF;
+}

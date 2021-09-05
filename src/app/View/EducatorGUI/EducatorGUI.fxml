@@ -15,31 +15,31 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.EducatorGUI.EducatorGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../YeniMetinBelgesi.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.EducatorGUI.EducatorGUI">
    <children>
       <VBox layoutX="213.0" layoutY="100.0" prefHeight="442.0" prefWidth="680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="30.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="eduexitbutt" layoutX="534.0" layoutY="2.0" mnemonicParsing="false" onAction="#handle" text="Çıkış Yap" />
-                  <Label layoutX="6.0" layoutY="8.0" text="HOŞGELDİNİZ" />
+                  <Button fx:id="eduexitbutt" layoutX="540.0" layoutY="4.0" mnemonicParsing="false" onAction="#handle" styleClass="ll" text="Çıkış Yap" />
+                  <Label layoutX="6.0" layoutY="8.0" styleClass="ll" text="HOŞGELDİNİZ" />
                </children>
             </Pane>
             <HBox prefHeight="362.0" prefWidth="600.0">
                <children>
-                  <TabPane prefHeight="362.0" prefWidth="832.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane prefHeight="362.0" prefWidth="832.0" style="-fx-background-color .tab-header-background: fff;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Konular">
                            <content>
                               <VBox prefHeight="200.0" prefWidth="100.0">
                                  <children>
-                                    <Pane prefHeight="30.0" prefWidth="370.0">
+                                    <Pane prefHeight="82.0" prefWidth="601.0">
                                        <children>
-                                          <Label layoutY="6.0" text="Başlık" />
-                                          <Label layoutX="155.0" layoutY="6.0" text="Ders" />
-                                          <TextField fx:id="filtitle" layoutX="32.0" layoutY="2.0" prefHeight="25.0" prefWidth="117.0" />
-                                          <Button fx:id="filbutt" layoutX="318.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Ara" />
-                                          <ComboBox fx:id="fillcourse" layoutX="181.0" layoutY="2.0" prefHeight="25.0" prefWidth="134.0" />
+                                          <Label layoutX="8.0" layoutY="11.0" styleClass="ll" text="Başlık" />
+                                          <Label layoutX="198.0" layoutY="10.0" styleClass="ll" text="Ders" />
+                                          <TextField fx:id="filtitle" layoutX="51.0" layoutY="7.0" prefHeight="25.0" prefWidth="117.0" />
+                                          <Button fx:id="filbutt" layoutX="427.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" styleClass="ll" text="Ara" />
+                                          <ComboBox fx:id="fillcourse" layoutX="233.0" layoutY="5.0" prefHeight="25.0" prefWidth="134.0" promptText="Ders Seçiniz" style="-fx-background-color: fff;" styleClass="ll" />
                                        </children>
                                     </Pane>
                                     <HBox>
@@ -48,9 +48,9 @@
                                             <columns>
                                               <TableColumn fx:id="col_id" prefWidth="34.4000244140625" text="ID" />
                                               <TableColumn fx:id="col_title" prefWidth="77.5999755859375" text="BAŞLIK" />
-                                                <TableColumn fx:id="col_desc" prefWidth="85.60003662109375" text="AÇIKLAMA" />
-                                                <TableColumn fx:id="col_link" prefWidth="104.0" text="YOUTUBEL LİNK" />
-                                                <TableColumn fx:id="col_course" prefWidth="75.0" text="DERS" />
+                                                <TableColumn fx:id="col_desc" prefWidth="98.39995574951172" text="AÇIKLAMA" />
+                                                <TableColumn fx:id="col_link" prefWidth="114.4000244140625" text="YOUTUBEL LİNK" />
+                                                <TableColumn fx:id="col_course" prefWidth="53.5999755859375" text="DERS" />
                                             </columns>
                                           </TableView>
                                           <VBox prefHeight="303.0" prefWidth="262.0">
@@ -78,8 +78,8 @@
                                                       <Insets top="5.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <ComboBox fx:id="addCourse" prefHeight="26.0" prefWidth="231.0" />
-                                                <Button fx:id="addButt" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Ekle">
+                                                <ComboBox fx:id="addCourse" prefHeight="26.0" prefWidth="231.0" promptText="Ders Seçiniz" style="-fx-background-color: fff;" />
+                                                <Button fx:id="addButt" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" styleClass="ll" text="Ekle">
                                                    <VBox.margin>
                                                       <Insets top="5.0" />
                                                    </VBox.margin>
@@ -110,31 +110,31 @@
                                     </TableView>
                                     <VBox prefHeight="336.0" prefWidth="230.0">
                                        <children>
-                                          <Label text="Soru">
+                                          <Label styleClass="ll" text="Soru">
                                              <VBox.margin>
                                                 <Insets />
                                              </VBox.margin>
                                           </Label>
-                                          <TextArea fx:id="addQuestion" prefHeight="52.0" prefWidth="221.0" />
-                                          <Label text="Cevaplar">
+                                          <TextArea fx:id="addQuestion" prefHeight="21.0" prefWidth="219.0" styleClass="ll" />
+                                          <Label styleClass="ll" text="Cevaplar">
                                              <VBox.margin>
                                                 <Insets top="5.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <TextArea fx:id="addAnswer" prefHeight="99.0" prefWidth="221.0" />
-                                          <Label text="Doğru Cevap">
+                                          <TextArea fx:id="addAnswer" prefHeight="74.0" prefWidth="219.0" />
+                                          <Label styleClass="ll" text="Doğru Cevap">
                                              <VBox.margin>
                                                 <Insets top="5.0" />
                                              </VBox.margin>
                                           </Label>
                                           <ComboBox fx:id="addRight" prefHeight="26.0" prefWidth="220.0" />
-                                          <Label text="Konu">
+                                          <Label styleClass="ll" text="Konu">
                                              <VBox.margin>
                                                 <Insets top="5.0" />
                                              </VBox.margin>
                                           </Label>
                                           <ComboBox fx:id="addQuestionTitle" prefHeight="26.0" prefWidth="231.0" />
-                                          <Button fx:id="addQuestionButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Ekle">
+                                          <Button fx:id="addQuestionButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" styleClass="ll" text="Ekle">
                                              <VBox.margin>
                                                 <Insets top="5.0" />
                                              </VBox.margin>
@@ -150,11 +150,7 @@
                         </Tab>
                     </tabs>
                   </TabPane>
-                  <Pane prefHeight="318.0" prefWidth="231.0">
-                     <children>
-                        <TabPane fx:id="addpane" prefHeight="362.0" prefWidth="229.0" tabClosingPolicy="UNAVAILABLE" />
-                     </children>
-                  </Pane>
+                  <Pane prefHeight="318.0" prefWidth="231.0" />
                </children>
             </HBox>
          </children>

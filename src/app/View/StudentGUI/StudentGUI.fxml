@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.StudentGUI.StudentGUI">
+<Pane styleClass="ll" stylesheets="@../YeniMetinBelgesi.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.StudentGUI.StudentGUI">
    <children>
       <TabPane prefHeight="400.0" prefWidth="458.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -26,7 +26,7 @@
             <content>
               <AnchorPane fx:id="coursepane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TreeView fx:id="coursetree" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TreeView fx:id="coursetree" layoutY="-12.0" prefHeight="354.0" prefWidth="458.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -35,15 +35,15 @@
       </TabPane>
       <Pane layoutX="457.0" prefHeight="400.0" prefWidth="143.0">
          <children>
-            <Label fx:id="namelabel" layoutX="10.0" layoutY="14.0" prefHeight="16.0" prefWidth="124.0" text="Hoşgeldiniz" />
+            <Label fx:id="namelabel" layoutX="10.0" layoutY="14.0" prefHeight="16.0" prefWidth="124.0" styleClass="ll" text="Hoşgeldiniz" />
             <Label layoutX="10.0" layoutY="36.0" prefHeight="16.0" prefWidth="124.0" text="Patikalarım&amp;Derslerim" />
             <ListView fx:id="listOfQuizes" layoutX="10.0" layoutY="73.0" prefHeight="313.0" prefWidth="124.0" />
-            <Label layoutX="10.0" layoutY="53.0" prefHeight="17.0" prefWidth="78.0" text="Puan Durumu">
+            <Label layoutX="10.0" layoutY="53.0" prefHeight="17.0" prefWidth="78.0" style="-fx-font-size: 10;" styleClass="ll" text="Puan Durumu">
                <font>
-                  <Font size="10.0" />
+                  <Font size="6.0" />
                </font>
             </Label>
-            <Label fx:id="puanLabel" layoutX="101.0" layoutY="53.0" text="Puan" />
+            <Label fx:id="puanLabel" layoutX="101.0" layoutY="53.0" styleClass="ll" text="Puan" />
          </children>
       </Pane>
    </children>

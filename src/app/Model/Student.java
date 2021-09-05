@@ -42,14 +42,16 @@ public class Student extends User {
                 patika1 += patname + "/";
                 query = "UPDATE students SET patikas = '" + patika1 + "' WHERE id = " + StudentId;
 
-                Statement statement;
-                try {
-                    statement = DBConnector.getInstance().createStatement();
-                    statement.executeUpdate(query);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
+        }
+        Statement statement;
+        try {
+            statement = DBConnector.getInstance().createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NullPointerException err) {
+
         }
 
     }
@@ -61,35 +63,45 @@ public class Student extends User {
             Statement statement = DBConnector.getInstance().createStatement();
             ResultSet resultSet = statement.executeQuery(query1);
             while (resultSet.next()) {
+                System.out.println("test");
                 String name = resultSet.getString("courses");
                 course = name;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String query;
+        String query = null;
         if (course == null) {
+            System.out.println("test2");
+
             query = "INSERT INTO students (id,courses,patikas,contents,quiz) VALUES (?1,'?2/','?3','?4','?5')";
             query = query.replace("?1", String.valueOf(StudentId));
             query = query.replace("?2", coursename);
             query = query.replace("?3", " ");
             query = query.replace("?4", " ");
             query = query.replace("?5", "/");
+            System.out.println("test2.1");
+            System.out.println(coursename + StudentId);
 
         } else {
             if (course.contains(coursename)) {
                 Helper.showMsg("Bu ders alınmıştır.");
             } else {
+                System.out.println("test3");
+
                 course += coursename + "/";
                 query = "UPDATE students SET courses = '" + course + "' WHERE id = " + StudentId;
-                Statement statement;
-                try {
-                    statement = DBConnector.getInstance().createStatement();
-                    statement.executeUpdate(query);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+
             }
+        }
+        Statement statement;
+        try {
+            statement = DBConnector.getInstance().createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NullPointerException err) {
+
         }
     }
 
@@ -196,21 +208,20 @@ public class Student extends User {
     public ArrayList<String> quizresults(int studentId) {
         ArrayList<String> qArrayList = new ArrayList<>();
         String query = "SELECT quiz FROM students WHERE id = " + studentId;
-        
+
         try {
-        String str = " ";
-        Statement statement;
+            String str = " ";
+            Statement statement;
             statement = DBConnector.getInstance().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 str += resultSet.getString("quiz");
                 str = str.replace("/", "");
-            qArrayList.addAll(Arrays.asList(str.split("-")));
+                qArrayList.addAll(Arrays.asList(str.split("-")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
 
         return qArrayList;
 

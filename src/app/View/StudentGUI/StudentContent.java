@@ -2,6 +2,9 @@ package app.View.StudentGUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
+
 import app.Helper.Helper;
 import app.Model.Lessons;
 import app.Model.Student;
@@ -64,6 +67,8 @@ public class StudentContent {
     @FXML
     private Label contentnumright;
 
+    @FXML
+    private Label testInfo;
 
     @FXML
     void initialize() {
@@ -92,7 +97,6 @@ public class StudentContent {
                 : "fx:id=\"contetexit\" was not injected: check your FXML file 'StudentContent.fxml'.";
         assert contentnumright != null
                 : "fx:id=\"contetexit\" was not injected: check your FXML file 'StudentContent.fxml'.";
-     
 
         comboSelect.getItems().setAll("A", "B", "C", "D");
 
@@ -121,12 +125,23 @@ public class StudentContent {
             }
         });
 
+        if (Lessons.getQuestions(0).stream().anyMatch(predicate -> predicate.getContentString().equals(contentname))) {
+            loadQuestion(contentname);
+        } else {
+            questionNext.setVisible(false);
+            questionprev.setVisible(false);
+            comboSelect.setVisible(false);
+            numlabel.setVisible(false);
+            contentquiz.setVisible(false);
+            contentanswers.setVisible(false);
+            testInfo.setVisible(false);
+        }
+
         Lessons.getLessons(0).stream().forEach(e -> {
             if (e.getId() == getId(contentname)) {
                 contenttitle.setText(e.getName());
                 contentcourse.setText(e.getBranch());
                 contentlink.setText(e.getLink());
-                loadQuestion(contentname);
             }
         });
 
@@ -143,9 +158,9 @@ public class StudentContent {
             }
         }
         contetforward.setOnAction(ev -> {
-            
-                Student student = new Student();
-                student.takeQuiz(p, getId(contentname), studentId);
+
+            Student student = new Student();
+            student.takeQuiz(p, getId(contentname), studentId);
             try {
                 setLabels(branch.get(in + 1), studentId);
                 p = 0;
@@ -185,7 +200,6 @@ public class StudentContent {
         ArrayList<String> queAnswers = new ArrayList<>();
         ArrayList<String> rightAnswers = new ArrayList<>();
 
-        System.out.println(Lessons.getQuestions(0).size());
         Lessons.getQuestions(0).stream().forEach(e -> {
             if (e.getContentString().equals(contentname)) {
                 queStrings.add(e.getQuestionString());
@@ -217,7 +231,7 @@ public class StudentContent {
                     aa[i] = false;
                 }
             } catch (NullPointerException err) {
-                if (aa[i] == null) {
+                if (aa.length > 0 && aa[i] == null) {
                     aa[i] = null;
                 }
             } catch (IndexOutOfBoundsException iob) {
@@ -231,7 +245,7 @@ public class StudentContent {
                 contentquiz.setText(queStrings.get(i));
                 contentanswers.setText(queAnswers.get(i));
                 numlabel.setText((i + 1) + "/" + j);
-                if (i+1 == queAnswers.size()) {
+                if (i + 1 == queAnswers.size()) {
                     questionNext.setText("Bitir");
                 }
 

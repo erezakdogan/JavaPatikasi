@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="506.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.LoginGUI">
+<BorderPane prefHeight="500.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View.LoginGUI">
    <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="832.0" styleClass="backgroundColor" stylesheets="@YeniMetinBelgesi.css">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="830.0" styleClass="backgroundColor" stylesheets="@YeniMetinBelgesi.css">
          <children>
             <Pane layoutX="67.0" layoutY="254.0" prefHeight="160.0" prefWidth="390.0">
                <children>

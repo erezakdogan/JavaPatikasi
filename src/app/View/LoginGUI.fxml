@@ -19,11 +19,12 @@
       <Label layoutX="83.0" layoutY="198.0" text="Şifre" />
       <TextField fx:id="logname" layoutX="83.0" layoutY="173.0" />
       <TextField fx:id="logpass" layoutX="83.0" layoutY="215.0" />
-      <Button fx:id="lobbutton" layoutX="126.0" layoutY="250.0" mnemonicParsing="false"  text="Giriş Yap" />
+      <Button fx:id="lobbutton" layoutX="126.0" layoutY="250.0" mnemonicParsing="false" text="Giriş Yap" />
       <ImageView fitHeight="97.0" fitWidth="171.0" layoutX="73.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../patikaLogo.png" />
          </image>
       </ImageView>
+      <Button fx:id="signupButton" layoutX="213.0" layoutY="250.0" mnemonicParsing="false" text="Kaydol" />
    </children>
 </Pane>

@@ -2,7 +2,6 @@ package app.View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import app.Model.User;
 import app.View.EducatorGUI.EducatorGUI;
 import app.View.OperatorGUI.OperatorGUI;
@@ -35,6 +34,10 @@ public class LoginGUI {
     private Button lobbutton;
 
     @FXML
+    private Button signupButton;
+
+    
+    @FXML
     void initialize() {
         assert logname != null : "fx:id=\"logname\" was not injected: check your FXML file 'Untitled'.";
         assert logpass != null : "fx:id=\"logpass\" was not injected: check your FXML file 'Untitled'.";
@@ -43,7 +46,24 @@ public class LoginGUI {
     }
 
     public void login(){
-        System.out.println("login screen");
+        signupButton.setOnAction(arg0->{
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpGUI.fxml"));
+                BorderPane root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage primaryStage = new Stage();
+                primaryStage.setTitle("Hello World!");
+                primaryStage.initModality(Modality.APPLICATION_MODAL);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+                }catch(Exception ee){
+                System.out.println(ee.getMessage());
+                
+            }
+            Stage stage =(Stage)lobbutton.getScene().getWindow();
+            stage.close();
+        });
+        
         lobbutton.setOnAction(e->{
             if(logname.getText().length()==0||logpass.getText().length()==0){
                 System.out.println("Boşlukları Doldurunuz!");

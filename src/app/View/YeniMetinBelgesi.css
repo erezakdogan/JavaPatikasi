@@ -1,0 +1,29 @@
+
+.backgroundColor{
+    -fx-background-color: linear-gradient(to right,#E9EAFD, #F6F7DE);
+}
+
+.button-primary {
+    display: inline-block;
+    -fx-margin-right: 10px;
+    -fx-margin-left: 0;
+    -fx-border-radius: 0;
+    -fx-background-color: #444bff;
+    -fx-font-family: 'Roboto Mono',sans-serif;
+    -fx-color: #ffffff;
+    -fx-font-size: 13px;
+    -fx-line-height: 1.25em;
+    -fx-text-align: center;
+}
+.body {
+    -fx-font-family: Nunito,sans-serif;
+    -fx-color: #000;
+    -fx-font-size: 16px;
+    -fx-font-weight: 300;
+}
+
+.textfield {
+   display: block;
+-fx-background-radius : 0px;
+-fx-border-color : #444BFF;
+}

@@ -18,10 +18,10 @@
                <children>
                   <TextField fx:id="signpass" layoutX="228.0" layoutY="47.0" style="-fx-background-radius: 0px; -fx-border-color: #444BFF;" />
                   <TextField fx:id="signuname" layoutX="25.0" layoutY="100.0" styleClass="textfield" />
-                  <Label layoutX="228.0" layoutY="30.0" text="ŞİFRE" />
+                  <Label layoutX="228.0" layoutY="30.0" style="-fx-text-fill: #000;" text="ŞİFRE" />
                   <TextField fx:id="signname" layoutX="25.0" layoutY="47.0" styleClass="textfield" stylesheets="@Yeni%20Metin%20Belgesi.css" />
-                  <Label layoutX="26.0" layoutY="83.0" text="KULLANICI ADI" />
-                  <Label layoutX="26.0" layoutY="30.0" text="AD" />
+                  <Label layoutX="26.0" layoutY="83.0" style="-fx-text-fill: #000;" text="KULLANICI ADI" />
+                  <Label layoutX="26.0" layoutY="30.0" style="-fx-text-fill: #000;" text="AD" />
                   <Button fx:id="signbutt" layoutX="244.0" layoutY="100.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="119.0" style="-fx-text-fill: #fff; -fx-background-radius: 0px; -fx-font-weight: 200;" styleClass="button-primary" stylesheets="@../Desktop/Yeni%20Metin%20Belgesi.css" text="KAYDOL" textFill="#571717" />
                </children>
             </Pane>
@@ -30,12 +30,12 @@
                   <Image url="@61258050243035028dafe789_Patika%20Home%20Hero%20People-p-500.png" />
                </image>
             </ImageView>
-            <Label layoutX="87.0" layoutY="22.0" prefHeight="180.0" prefWidth="501.0" style="-fx-font-family: 'Roboto Mono',sans-serif; -fx-font-weight: 700;" stylesheets="@Yeni%20Metin%20Belgesi.css" text="Ücretsiz eğitimlerle teknoloji kariyerine başla!" wrapText="true">
+            <Label layoutX="87.0" layoutY="22.0" prefHeight="180.0" prefWidth="501.0" style="-fx-font-family: 'Roboto Mono',sans-serif; -fx-font-weight: 700; -fx-text-fill: #000; -fx-font-size: 30;" text="Ücretsiz eğitimlerle teknoloji kariyerine başla!" wrapText="true">
                <font>
                   <Font name="Microsoft Sans Serif" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="87.0" layoutY="182.0" prefHeight="61.0" prefWidth="321.0" styleClass="body" stylesheets="@../Desktop/Yeni%20Metin%20Belgesi.css" text="Online derslerde ve bootcamp’te kendini göster.Partner şirketlerimizde işe gir." wrapText="true" />
+            <Label layoutX="87.0" layoutY="182.0" prefHeight="61.0" prefWidth="321.0" style="-fx-text-fill: #000;" styleClass="tt" text="Online derslerde ve bootcamp’te kendini göster.Partner şirketlerimizde işe gir." wrapText="true" />
          </children>
       </AnchorPane>
    </center>

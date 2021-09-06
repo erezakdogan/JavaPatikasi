@@ -7,10 +7,9 @@ public class Main {
     Account account = new Account(){
   @Override
         public void insuranceAdd(ArrayList<Insurance> insurances) {
+            
         }
     };
-     
     account.authenticationStatus();
-    
     }
 }

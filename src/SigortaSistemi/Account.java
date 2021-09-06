@@ -13,13 +13,10 @@ public abstract class Account {
     User user = new User("Individual","Erez", "Akdogan", "erezakdogan.ea@gmail.com", "Password4insurance", "Software Dev.", 21, new ArrayList<Address>() , new Date(1999-1900,11,18));
     
     AddressManager addressManager = new AddressManager(user);
-
-    
-    
     public void authenticationStatus(){
         enum state{
-                FAIL,
-                SUCCESS
+        FAIL,
+        SUCCESS
         }
         try{
             accountManager.login(user,user.getEmail(), user.getPassword());
@@ -28,15 +25,10 @@ public abstract class Account {
         System.out.println("Login : "+state.FAIL);
         login = false;
         }
-    
         if(login){
             System.out.println("Login : "+state.SUCCESS);
             afterLogin();
         }
-        
-        
-
-        
     }
     
     public abstract void insuranceAdd(ArrayList<Insurance> insurances);

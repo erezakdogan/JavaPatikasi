@@ -1,6 +1,6 @@
 
 .backgroundColor{
-    -fx-background-color: linear-gradient(to right,#E9EAFD, #F6F7DE);
+    -fx-background-color: linear-gradient(to right,#E9EAFD, #F8F9DA);
 }
 
 .button-primary {
@@ -33,13 +33,116 @@
 }
 
 .bt{
--fx-padding:0
+-fx-padding:0;
 }
-
+.backgroundc{
+    -fx-background-color: linear-gradient(to bottom,#647699, #5E2665);
+}
 .ll{
  -fx-font-family: 'Roboto Mono',sans-serif;
--fx-padding:0
+ -fx-text-fill: #000;
+s-fx-font-size: 13px;
 }
-.bg *.tab-header-area{
+.tab-header-background{
 -fx-background-color : #444BFF;
+-fx-background-radius : 0px;
 }
+
+ .student .tab-header-background{
+    -fx-background-color :  #243475;
+    -fx-background-radius : 15px;
+    -fx-padding:50;
+    -fx-border-color : transparent;
+    -fx-focus-color : transparent;
+    }
+.studenttree .tree-view .virtual-flow .clipped-container{
+
+    -fx-border-color : transparent;
+    -fx-focus-color : transparent;
+} */
+.list-view .virtual-flow .clipped-container .sheet{
+
+}
+.list-cell {
+    -fx-text-fill: black;
+  }
+ 
+  .list-cell .negative {
+    -fx-text-fill: red;
+  }
+.label{
+    -fx-font-family: 'Roboto Mono',sans-serif;
+    -fx-text-fill: #000;
+    -fx-font-size: 13px;
+}
+
+.table-view .column-header-background .label{
+    -fx-font-family: 'Roboto Mono',sans-serif;
+    -fx-text-fill: #fff;
+    -fx-font-size: 13px;
+}
+
+
+.button {
+ -fx-font-family: 'Roboto Mono',sans-serif;
+ -fx-padding:0;
+ -fx-font-size : 13px;
+ -fx-background-radius: 0px;
+ -fx-text-fill: #FFF;
+ -fx-background-color: #444bff;
+} 
+
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #444BFF;
+    -fx-background-radius: 7px 7px 7px 7px;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell{
+-fx-background-radius: 7px;
+}
+/*
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell: hover {
+    -fx-background-color: #93f9b911;
+}
+.table-row-cell: odd{
+    -fx-background-color: #93f9b911;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell: even{
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #444bff,  #3C3F54);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #444bff,  #3C3F54);
+}
+
+.table-row-cell: highlighted {
+    -fx-background-color: #81c483;
+    -fx-background-radius: 15px;
+}
+*/

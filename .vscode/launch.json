@@ -1,0 +1,364 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATM",
+            "request": "launch",
+            "mainClass": "ATM",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Empoyee",
+            "request": "launch",
+            "mainClass": "Empoyee",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch artikyil",
+            "request": "launch",
+            "mainClass": "artikyil",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch asalsayi",
+            "request": "launch",
+            "mainClass": "asalsayi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "boks.Main",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch burcbulma",
+            "request": "launch",
+            "mainClass": "burcbulma",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ciftsayibulma",
+            "request": "launch",
+            "mainClass": "ciftsayibulma",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch cinzodyagi",
+            "request": "launch",
+            "mainClass": "cinzodyagi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch dairealan",
+            "request": "launch",
+            "mainClass": "dairealan",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch desenegoremetot",
+            "request": "launch",
+            "mainClass": "desenegoremetot",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch dizileharf",
+            "request": "launch",
+            "mainClass": "dizileharf",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ebobekok",
+            "request": "launch",
+            "mainClass": "ebobekok",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch fibonaccidizisi",
+            "request": "launch",
+            "mainClass": "fibonaccidizisi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch freq",
+            "request": "launch",
+            "mainClass": "freq",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch gecmedurumu",
+            "request": "launch",
+            "mainClass": "gecmedurumu",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch harmoniktoplam",
+            "request": "launch",
+            "mainClass": "harmoniktoplam",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch harmoniktoplam2",
+            "request": "launch",
+            "mainClass": "harmoniktoplam2",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch hesapmakinesi",
+            "request": "launch",
+            "mainClass": "hesapmakinesi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch hesapmakinesi2",
+            "request": "launch",
+            "mainClass": "hesapmakinesi2",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch kdvtutari",
+            "request": "launch",
+            "mainClass": "kdvtutari",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch kombinasyonhesaplama",
+            "request": "launch",
+            "mainClass": "kombinasyonhesaplama",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch kullanicigirisi",
+            "request": "launch",
+            "mainClass": "kullanicigirisi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch kuvvetyazdirma",
+            "request": "launch",
+            "mainClass": "kuvvetyazdirma",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch maksmin",
+            "request": "launch",
+            "mainClass": "maksmin",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch manavkasa",
+            "request": "launch",
+            "mainClass": "manavkasa",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch mayintarlasi",
+            "request": "launch",
+            "mainClass": "mayintarlasi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch mukemmelsayi",
+            "request": "launch",
+            "mainClass": "mukemmelsayi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(1)",
+            "request": "launch",
+            "mainClass": "obs.Main",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ortalama",
+            "request": "launch",
+            "mainClass": "ortalama",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch palindromikkelime",
+            "request": "launch",
+            "mainClass": "palindromikkelime",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch palindromsayi",
+            "request": "launch",
+            "mainClass": "palindromsayi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursiveasalsayi",
+            "request": "launch",
+            "mainClass": "recursiveasalsayi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursivefibonacci",
+            "request": "launch",
+            "mainClass": "recursivefibonacci",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch recursiveus",
+            "request": "launch",
+            "mainClass": "recursiveus",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayibasamaktoplami",
+            "request": "launch",
+            "mainClass": "sayibasamaktoplami",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayisiralama",
+            "request": "launch",
+            "mainClass": "sayisiralama",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayisiralama2",
+            "request": "launch",
+            "mainClass": "sayisiralama2",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch sayitahmin",
+            "request": "launch",
+            "mainClass": "sayitahmin",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch sicakligagoreetkinlik",
+            "request": "launch",
+            "mainClass": "sicakligagoreetkinlik",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch siralama",
+            "request": "launch",
+            "mainClass": "siralama",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch taksimetre",
+            "request": "launch",
+            "mainClass": "taksimetre",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch tekraredensayi",
+            "request": "launch",
+            "mainClass": "tekraredensayi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch teksayitoplami",
+            "request": "launch",
+            "mainClass": "teksayitoplami",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch tersucgen",
+            "request": "launch",
+            "mainClass": "tersucgen",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch transpoz",
+            "request": "launch",
+            "mainClass": "transpoz",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ucakbileti",
+            "request": "launch",
+            "mainClass": "ucakbileti",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ucgenalan",
+            "request": "launch",
+            "mainClass": "ucgenalan",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch uslusayihesaplama",
+            "request": "launch",
+            "mainClass": "uslusayihesaplama",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch vucutkitleindeksi",
+            "request": "launch",
+            "mainClass": "vucutkitleindeksi",
+            "projectName": "JavaPatikasi_89ad641a"
+        },
+        {
+            "type": "java",
+            "name": "Launch yildizileucgen",
+            "request": "launch",
+            "mainClass": "yildizileucgen",
+            "projectName": "JavaPatikasi_89ad641a"
+        }
+    ]
+}

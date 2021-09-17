@@ -5,12 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import java.awt.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
+import java.awt.event.ActionEvent; 
 
 public class UpdateGUI{
     int id;
@@ -58,9 +53,6 @@ public class UpdateGUI{
     private void handleConnectButtonAction(ActionEvent event){
    System.out.println("df");          
 }
-
-    private void up(String text) {
-        System.out.println(text);
-    }
+ 
     
 }

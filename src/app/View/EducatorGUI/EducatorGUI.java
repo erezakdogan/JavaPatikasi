@@ -1,14 +1,11 @@
 package app.View.EducatorGUI;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import app.App;
-import app.mainframe;
+import app.App; 
 import app.Helper.Helper;
-import app.Model.Course;
-import app.Model.Educator;
+import app.Model.Course; 
 import app.Model.Lessons;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,13 +20,8 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.scene.layout.*;
-
+ 
+import javafx.stage.Stage; 
 public class EducatorGUI {
     @FXML
     private ResourceBundle resources;

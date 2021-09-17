@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch hesapmakinesi3",
+            "request": "launch",
+            "mainClass": "hesapmakinesi3",
+            "projectName": "src_6de0e26f"
+        },
+        {
+            "type": "java",
             "name": "Launch den",
             "request": "launch",
             "mainClass": "app.Model.den",

@@ -6,8 +6,7 @@ import java.util.ResourceBundle;
 import app.App;
 import app.Helper.Helper;
 import app.Model.Patika;
-import app.Model.User;
-import app.View.LoginGUI;
+import app.Model.User; 
 import app.Model.Operator;
 import app.Model.Course;
 import javafx.fxml.FXML;
@@ -22,13 +21,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.control.Label;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.scene.layout.*;
+import javafx.scene.control.Label; 
+import javafx.stage.Stage; 
 
 public class OperatorGUI {
     Operator operator;

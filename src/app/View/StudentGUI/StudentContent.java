@@ -2,9 +2,7 @@ package app.View.StudentGUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
-
+ 
 import app.Helper.Helper;
 import app.Model.Lessons;
 import app.Model.Student;

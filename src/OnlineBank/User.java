@@ -18,7 +18,7 @@ public class User {
     private String pass;
     JSONObject jmain;
 
-    public User(float tcNO, float balance, float creditDebt, float cartDebt, String name,String pass) {
+    public User(float tcNO, float balance, float creditDebt, float cartDebt, String name, String pass) {
         this.tcNO = tcNO;
         this.balance = balance;
         this.creditDebt = creditDebt;
@@ -26,9 +26,6 @@ public class User {
         this.name = name;
         this.pass = name;
     }
-
-   
-
 
     public float getTcNO() {
         return this.tcNO;
@@ -106,7 +103,6 @@ public class User {
 
         JSONObject jsonObject = new JSONObject(employee);
         jsonArray.add(jsonObject);
-        jsonArray.add(jsonObject);
         jmain.put("employees", jsonArray);
 
         try (FileWriter file = new FileWriter("OnlineBank/DataBase.json")) {
@@ -114,6 +110,30 @@ public class User {
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void updateUser(String tcNO, String key, Object value) {
+        try {
+            FileReader fileReader = new FileReader("OnlineBank/DataBase.json");
+            BufferedReader br = new BufferedReader(fileReader);
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(br);
+            JSONArray jsonArray = (JSONArray) jsonObject.get("employees");
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JSONObject jsonObject2 = (JSONObject) jsonArray.get(i);
+                if (tcNO.equals(jsonObject2.get("tcNO").toString())) {
+                    jsonObject2.put(key, value);
+                }
+            }
+
+            try (FileWriter file = new FileWriter("OnlineBank/DataBase.json")) {
+                file.write(jsonObject.toString());
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
         }
     }
 }

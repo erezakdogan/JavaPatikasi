@@ -14,7 +14,7 @@ import org.json.simple.parser.ParseException;
 public class BankManagement {
     static boolean authenticate = false;
     static Scanner scanner = new Scanner(System.in);
-    static org.json.JSONObject userJson;
+    static JSONObject userJson;
 
     public static void main(String[] args) {
         getJsonFile();
@@ -52,54 +52,98 @@ public class BankManagement {
                     payments(tcNO);
                     break;
                 case 0:
+                    selection = 0;
                     break;
             }
 
         } while (selection != 0);
     }
 
-    private static void payments(String tcNO) {
+    private static void sendMoney(String tcNO) {
         String paymentSection = "Alıcının T.C. Kimlik Numarasını Giriniz : ";
         System.out.println(paymentSection);
         String reciverTC = scanner.next();
+        boolean notExists = true;
         for (int i = 0; i < getJsonFile().size(); i++) {
             JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
-
-            if ((boolean) jsonObject.get(("tcNo").equals(reciverTC))) {
+            if (reciverTC.contains(jsonObject.get("tcNO").toString())) {
                 System.out.println("Göndermek istediğiniz tutarı giriniz : ");
-                float amount = scanner.nextFloat();
-                if (amount < userJson.getFloat("balance")) {
-                    org.json.JSONObject receiver = (org.json.JSONObject) getJsonFile().get(i);
-                    receiver.put("balance", (float) receiver.get("balance") + amount);
+                int amount = scanner.nextInt();
+                notExists = false;
+                if (amount < Integer.parseInt(getUserJson(tcNO).get("balance").toString())) {
+                    JSONObject receiver = (JSONObject) getJsonFile().get(i);
+                    int finBalance = Integer.parseInt(receiver.get("balance").toString()) + amount;
+                    User.updateUser(reciverTC, "balance", finBalance);
 
-                    for (int j = 0; j < getJsonFile().size(); j++) {
-                        org.json.JSONObject jsonObject2 = (org.json.JSONObject) getJsonFile().get(j);
-                        if (jsonObject2.get("tcNo") == tcNO) {
-                            org.json.JSONObject sender = jsonObject2;
-                            sender.put("balance", (float) receiver.get("balance") - amount);
-                        }
-                    }
+                    // if (tcNO.contains(userJson.get("tcNO").toString())) {
+                    int finBalanceSender = Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount;
+                    User.updateUser(tcNO, "balance", finBalanceSender);
+                    // break;
+                    // }
+                    break;
                 }
-
-            } else {
-                System.out.println("T.C. NUMARASI YANLIŞ TEKRAR DENEYİNİZ!");
+                break;
             }
-
+        }
+        if (notExists) {
+            System.out.println("T.C. NUMARASI YANLIŞ TEKRAR DENEYİNİZ!");
         }
     }
 
-    private static void sendMoney(String tcNO) {
+    private static void payments(String tcNO) {
+        int selection = -1;
+        while (selection != 3) {        
+            System.out.println("1.Kredi Ödemesi\n2.Kredi Kartı Ekstresi\n3.Ana Menü\nSeçim Yapınız.");
+            selection = scanner.nextInt();
+            switch (selection) {
+                case 1:
+                    if (getUserJson(tcNO).get("creditDebt").equals(0)) {
+                        System.out.println("Borcunuz Bulunmamaktadır.\n0.Çıkış");
+                        selection = scanner.nextInt();
+                    } else {
+                        System.out.println(
+                                "Mevcut Borcunuz : " + getUserJson(tcNO).get("creditDebt") + "\nÖdemek istediğiniz tutar : ");
+                        int amount = scanner.nextInt();
+                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString())-amount) {
+                            int finDebt = Integer.parseInt(getUserJson(tcNO).get("creditDebt").toString()) - amount;
+                            User.updateUser(tcNO, "creditDebt", finDebt);
+                            System.out.println(finDebt);
+                            User.updateUser(tcNO, "balance", (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
+                        } else {
+                            System.out.println("Hesabınızda giridiğiniz değerde bakiye bulunmamaktadır.");
+                        }
+                    }
+                    break;
+                case 2:
+                    if (getUserJson(tcNO).get("cartDebt").equals(0)) {
+                        System.out.println("Borcunuz Bulunmamaktadır.\n0.Çıkış");
+                        selection = scanner.nextInt();
+                    } else {
+                        System.out.println(
+                                "Mevcut Borcunuz : " + getUserJson(tcNO).get("cartDebt") + "\nÖdemek istediğiniz tutar : ");
+                        int amount = scanner.nextInt();
+                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString())-amount) {
+                            int finDebtc = Integer.parseInt(getUserJson(tcNO).get("cartDebt").toString()) - amount;
+                            User.updateUser(tcNO, "cartDebt", finDebtc);
+                            User.updateUser(tcNO, "balance", (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
+                        } else {
+                            System.out.println("Hesabınızda giridiğiniz değerde bakiye bulunmamaktadır.");
+                        }
+                    }
+                    break;
+                default :
+                    System.out.println("Geçersiz Bir Seçim Yaptınız Tekrar Deneyiniz.");
+                    break;
+            }
+        }
     }
 
     private static boolean authenticate(String tcNO, String pass) {
-        System.out.println(tcNO + " " + pass);
-        System.out.println(getJsonFile().size());
         for (int i = 0; i < getJsonFile().size(); i++) {
             JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
-            if (jsonObject.get("tcNO").toString() == tcNO && jsonObject.get("pass").equals(pass)) {
+            if (jsonObject.get("tcNO").toString() == tcNO || jsonObject.get("pass").equals(pass)) {
                 authenticate = true;
-                System.out.println("autenticated");
-                userJson = (org.json.JSONObject) getJsonFile().get(i);
+                userJson = (JSONObject) getJsonFile().get(i);
             } else {
                 System.out.println("ŞİFRE YA DA T.C. NUMARASI YANLIŞ TEKRAR DENEYİNİZ!");
             }
@@ -108,9 +152,7 @@ public class BankManagement {
 
     }
 
-    private static org.json.simple.JSONArray getJsonFile() {
-        System.out.println("jsonArray.get(2).toString()");
-
+    private static JSONArray getJsonFile() {
         JSONArray jsonArray = new JSONArray();
         try {
             FileReader file = new FileReader("OnlineBank/DataBase.json");
@@ -123,12 +165,19 @@ public class BankManagement {
             System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(e.getMessage());
-
         } catch (ParseException e) {
             System.out.println(e.getMessage());
-
         }
         return jsonArray;
+    }
+    private static JSONObject getUserJson(String tcNO){
+       for(int i = 0 ; i<getJsonFile().size();i++){
+           JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
+           if(tcNO.equals(jsonObject.get("tcNO").toString())){
+               return jsonObject;
+           }
+       }
+        return null;
     }
 
 }

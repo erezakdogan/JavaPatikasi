@@ -18,9 +18,28 @@ public class BankManagement {
 
     public static void main(String[] args) {
         getJsonFile();
+        selectAction();
         login();
+
         // User user = new User(0, 0, 0, 0, null, "sfd");
         // user.addUser(0, 0, 0, 0, null, "1234");
+    }
+
+    private static void selectAction() {
+        System.out.println("1.Giriş Yap\n2.Kaydol");
+        int selection = scanner.nextInt();
+        switch(selection){
+            case 1:
+            login();
+            break;
+            case 2:
+            addUser();
+            break;
+        }
+    }
+
+    private static void addUser() {
+        
     }
 
     private static void login() {
@@ -40,7 +59,7 @@ public class BankManagement {
 
     private static void onlineTransactions(String tcNO) {
         String selections = "1.Para Transferi \n2.Ödemeler\n3.Ana Menü\n0.Çıkış Yap\nSeçim Yap";
-        int selection;
+        int selection = -1;
         do {
             System.out.println(selections);
             selection = scanner.nextInt();
@@ -55,6 +74,7 @@ public class BankManagement {
                     selection = 0;
                     break;
             }
+            selection = scanner.nextInt();
 
         } while (selection != 0);
     }

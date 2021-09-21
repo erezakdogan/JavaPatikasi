@@ -19,27 +19,48 @@ public class BankManagement {
     public static void main(String[] args) {
         getJsonFile();
         selectAction();
-        login();
 
-        // User user = new User(0, 0, 0, 0, null, "sfd");
-        // user.addUser(0, 0, 0, 0, null, "1234");
     }
 
     private static void selectAction() {
-        System.out.println("1.Giriş Yap\n2.Kaydol");
-        int selection = scanner.nextInt();
-        switch(selection){
-            case 1:
-            login();
-            break;
-            case 2:
-            addUser();
-            break;
+        int selection = -1;
+        while (selection != 0) {
+            System.out.println("1.Giriş Yap\n2.Kaydol\n0.Çıkış Yap");
+            selection = scanner.nextInt();
+            switch (selection) {
+                case 1:
+                    login();
+                    break;
+                case 2:
+                    addUser();
+                    break;
+            }
         }
     }
 
     private static void addUser() {
-        
+        System.out.print("T.C. KİMLİK NUMARASI : ");
+        int tcNO = scanner.nextInt();
+        System.out.print("BAKİYE : ");
+        int balance = scanner.nextInt();
+        System.out.print("KREDİ BORCU : ");
+        int creditDebt = scanner.nextInt();
+        System.out.print("KART BORCU : ");
+        int cartDebt = scanner.nextInt();
+        System.out.print("DOĞUM YILI : ");
+        int birthYear = scanner.nextInt();
+        System.out.print("İSİM : ");
+        String name = scanner.next();
+        System.out.print("ŞİFRE : ");
+        String pass = scanner.next();
+        if (pass.contains(String.valueOf(birthYear))) {
+            while (pass.contains(String.valueOf(birthYear))) {
+                System.out.println("Şifreniz doğum tarihinizi içeremez\nTekrar Şifre Belirleyiniz : ");
+                pass = scanner.next();
+            }
+        }
+        User user = new User(tcNO, balance, creditDebt, cartDebt, name, pass);
+
     }
 
     private static void login() {
@@ -48,17 +69,37 @@ public class BankManagement {
         System.out.println("ŞİFRE : ");
         String pass = scanner.next();
 
-        int attemtCount = 3;
-        while (authenticate || attemtCount > 0) {
-            if (authenticate(tcNO, pass)) {
-                onlineTransactions(tcNO);
+        int attemtCount = 2;
+        if (!authenticate(tcNO, pass)) {
+            while (attemtCount > 0) {
+                System.out.println("------------------------------------------------- ");
+                System.out.println("T.C. KİMLİK NO VEYA ŞİFRE YANLIŞ TEKRAR GİRİNİZ : ");
+                System.out.println("T.C. KİMLİK NO : ");
+                tcNO = scanner.next();
+                System.out.println("ŞİFRE : ");
+                pass = scanner.next();
+
+                attemtCount--;
             }
-            attemtCount--;
+        } else {
+            onlineTransactions(tcNO);
         }
+
+    }
+
+    private static boolean authenticate(String tcNO, String pass) {
+        for (int i = 0; i < getJsonFile().size(); i++) {
+            JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
+            if (tcNO.equals(jsonObject.get("tcNO").toString()) && jsonObject.get("pass").equals(pass)) {
+                return true;
+            }
+        }
+        return false;
+
     }
 
     private static void onlineTransactions(String tcNO) {
-        String selections = "1.Para Transferi \n2.Ödemeler\n3.Ana Menü\n0.Çıkış Yap\nSeçim Yap";
+        String selections = "1.Para Transferi \n2.Ödemeler\n0.Çıkış Yap\nSeçim Yapınız";
         int selection = -1;
         do {
             System.out.println(selections);
@@ -70,12 +111,9 @@ public class BankManagement {
                 case 2:
                     payments(tcNO);
                     break;
-                case 0:
-                    selection = 0;
-                    break;
             }
-            selection = scanner.nextInt();
 
+            System.out.println(selection);
         } while (selection != 0);
     }
 
@@ -90,7 +128,7 @@ public class BankManagement {
                 System.out.println("Göndermek istediğiniz tutarı giriniz : ");
                 int amount = scanner.nextInt();
                 notExists = false;
-                if (amount < Integer.parseInt(getUserJson(tcNO).get("balance").toString())) {
+                if (amount <= Integer.parseInt(getUserJson(tcNO).get("balance").toString())) {
                     JSONObject receiver = (JSONObject) getJsonFile().get(i);
                     int finBalance = Integer.parseInt(receiver.get("balance").toString()) + amount;
                     User.updateUser(reciverTC, "balance", finBalance);
@@ -112,7 +150,7 @@ public class BankManagement {
 
     private static void payments(String tcNO) {
         int selection = -1;
-        while (selection != 3) {        
+        while (selection != 3) {
             System.out.println("1.Kredi Ödemesi\n2.Kredi Kartı Ekstresi\n3.Ana Menü\nSeçim Yapınız.");
             selection = scanner.nextInt();
             switch (selection) {
@@ -121,14 +159,15 @@ public class BankManagement {
                         System.out.println("Borcunuz Bulunmamaktadır.\n0.Çıkış");
                         selection = scanner.nextInt();
                     } else {
-                        System.out.println(
-                                "Mevcut Borcunuz : " + getUserJson(tcNO).get("creditDebt") + "\nÖdemek istediğiniz tutar : ");
+                        System.out.println("Mevcut Borcunuz : " + getUserJson(tcNO).get("creditDebt")
+                                + "\nÖdemek istediğiniz tutar : ");
                         int amount = scanner.nextInt();
-                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString())-amount) {
+                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount) {
                             int finDebt = Integer.parseInt(getUserJson(tcNO).get("creditDebt").toString()) - amount;
                             User.updateUser(tcNO, "creditDebt", finDebt);
                             System.out.println(finDebt);
-                            User.updateUser(tcNO, "balance", (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
+                            User.updateUser(tcNO, "balance",
+                                    (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
                         } else {
                             System.out.println("Hesabınızda giridiğiniz değerde bakiye bulunmamaktadır.");
                         }
@@ -139,37 +178,24 @@ public class BankManagement {
                         System.out.println("Borcunuz Bulunmamaktadır.\n0.Çıkış");
                         selection = scanner.nextInt();
                     } else {
-                        System.out.println(
-                                "Mevcut Borcunuz : " + getUserJson(tcNO).get("cartDebt") + "\nÖdemek istediğiniz tutar : ");
+                        System.out.println("Mevcut Borcunuz : " + getUserJson(tcNO).get("cartDebt")
+                                + "\nÖdemek istediğiniz tutar : ");
                         int amount = scanner.nextInt();
-                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString())-amount) {
+                        if (0 < Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount) {
                             int finDebtc = Integer.parseInt(getUserJson(tcNO).get("cartDebt").toString()) - amount;
                             User.updateUser(tcNO, "cartDebt", finDebtc);
-                            User.updateUser(tcNO, "balance", (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
+                            User.updateUser(tcNO, "balance",
+                                    (Integer.parseInt(getUserJson(tcNO).get("balance").toString()) - amount));
                         } else {
                             System.out.println("Hesabınızda giridiğiniz değerde bakiye bulunmamaktadır.");
                         }
                     }
                     break;
-                default :
+                default:
                     System.out.println("Geçersiz Bir Seçim Yaptınız Tekrar Deneyiniz.");
                     break;
             }
         }
-    }
-
-    private static boolean authenticate(String tcNO, String pass) {
-        for (int i = 0; i < getJsonFile().size(); i++) {
-            JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
-            if (jsonObject.get("tcNO").toString() == tcNO || jsonObject.get("pass").equals(pass)) {
-                authenticate = true;
-                userJson = (JSONObject) getJsonFile().get(i);
-            } else {
-                System.out.println("ŞİFRE YA DA T.C. NUMARASI YANLIŞ TEKRAR DENEYİNİZ!");
-            }
-        }
-        return authenticate;
-
     }
 
     private static JSONArray getJsonFile() {
@@ -190,13 +216,14 @@ public class BankManagement {
         }
         return jsonArray;
     }
-    private static JSONObject getUserJson(String tcNO){
-       for(int i = 0 ; i<getJsonFile().size();i++){
-           JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
-           if(tcNO.equals(jsonObject.get("tcNO").toString())){
-               return jsonObject;
-           }
-       }
+
+    private static JSONObject getUserJson(String tcNO) {
+        for (int i = 0; i < getJsonFile().size(); i++) {
+            JSONObject jsonObject = (JSONObject) getJsonFile().get(i);
+            if (tcNO.equals(jsonObject.get("tcNO").toString())) {
+                return jsonObject;
+            }
+        }
         return null;
     }
 

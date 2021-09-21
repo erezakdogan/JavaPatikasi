@@ -1,1 +1,28 @@
-{"employees":[{"balance":1373,"pass":"55","tcNO":59,"creditDebt":550," name":null,"cartDebt":550},{"balance":550,"pass":"55","tcNO":58,"creditDebt":550," name":null,"cartDebt":550},{"balance":1523,"pass":"55","tcNO":56,"creditDebt":550," name":null,"cartDebt":550},{"balance":10,"pass":"55","tcNO":55,"creditDebt":0," name":null,"cartDebt":86}]}
+{
+    "employees": [
+        {
+            "balance": 1000,
+            "pass": "Ahmet123",
+            "tcNO": 1234,
+            "creditDebt": 500,
+            " name": "Ahmet",
+            "cartDebt": 500
+        },
+        {
+            "balance": 1000,
+            "pass": "Mehmet123",
+            "tcNO": 1235,
+            "creditDebt": 500,
+            " name": "Mehmet",
+            "cartDebt": 500
+        },
+        {
+            "balance": 1000,
+            "pass": "Sema123",
+            "tcNO": 1236,
+            "creditDebt": 500,
+            " name": "Sema",
+            "cartDebt": 500
+        }
+    ]
+}

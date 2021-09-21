@@ -10,54 +10,57 @@ import org.json.simple.parser.JSONParser;
 import java.util.HashMap;
 
 public class User {
-    private float tcNO;
-    private float balance;
-    private float creditDebt;
-    private float cartDebt;
+    private int tcNO;
+    private int balance;
+    private int creditDebt;
+    private int cartDebt;
     private String name;
     private String pass;
     JSONObject jmain;
 
-    public User(float tcNO, float balance, float creditDebt, float cartDebt, String name, String pass) {
+
+    public User(int tcNO, int balance, int creditDebt, int cartDebt, String name, String pass) {
         this.tcNO = tcNO;
         this.balance = balance;
         this.creditDebt = creditDebt;
         this.cartDebt = cartDebt;
         this.name = name;
-        this.pass = name;
+        this.pass = pass;
+        addUser(tcNO, balance, creditDebt, cartDebt, name, pass);
     }
 
-    public float getTcNO() {
+    public int getTcNO() {
         return this.tcNO;
     }
 
-    public void setTcNO(float tcNO) {
+    public void setTcNO(int tcNO) {
         this.tcNO = tcNO;
     }
 
-    public float getBalance() {
+    public int getBalance() {
         return this.balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 
-    public float getCreditDebt() {
+    public int getCreditDebt() {
         return this.creditDebt;
     }
 
-    public void setCreditDebt(float creditDebt) {
+    public void setCreditDebt(int creditDebt) {
         this.creditDebt = creditDebt;
     }
 
-    public float getCartDebt() {
+    public int getCartDebt() {
         return this.cartDebt;
     }
 
-    public void setCartDebt(float cartDebt) {
+    public void setCartDebt(int cartDebt) {
         this.cartDebt = cartDebt;
     }
+   
 
     public String getName() {
         return this.name;
@@ -75,7 +78,7 @@ public class User {
         this.pass = pass;
     }
 
-    public void addUser(float tcNO, float balance, float creditDebt, float cartDebt, String name, String pass) {
+    public void addUser(int tcNO, int balance, int creditDebt, int cartDebt, String name, String pass) {
         try {
             jmain = new JSONObject();
             FileReader f = new FileReader("OnlineBank/DataBase.json");
